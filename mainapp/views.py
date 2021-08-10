@@ -17,3 +17,25 @@ def example(request):
 
 def shop(request):
     return render(request, 'shop.html')
+
+def shop_laptop(request):
+    return render(request, 'shop_laptop.html')
+
+
+def shop_console(request):
+    return render(request, 'shop_console.html')
+
+
+def shop_handphone(request):
+    return render(request, 'shop_handphone.html')
+
+
+def first_page(request):
+    return render(request, 'firstpage.html')
+
+
+def second_page(request):
+    return render(request, 'secondpage.html')
+
+def cobacoba(request):
+    return render(request, 'cobacoba.html')
