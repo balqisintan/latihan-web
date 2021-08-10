@@ -15,5 +15,5 @@ def second_page(request):
 def example(request):
     return render(request, 'example.html')
 
-
-    
+def shop(request):
+    return render(request, 'shop.html')
