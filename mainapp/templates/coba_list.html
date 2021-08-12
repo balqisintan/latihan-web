@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-top: 100px;">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="container d-flex justify-content-center">
+                <div class="card p-3 bg-white text-end">
+                    <div class="row justify-content-between">
+                        <div class="col-3">
+                            <img src="https://img2.pngdownload.id/20180529/prp/kisspng-general-mobile-gm-6-telephone-android-one-general-general-mobile-5b0ce33cdfac50.5338485315275712609162.jpg"
+                                , width="200px">
+                        </div>
+                        <div class="col-7">
+                            <h3 style="text-align:left">SAMSUNG N-3 510J PLUS</h3>
+                            <h4 style="text-align:left">Type 12+ J Series</h4>
+                            <p style="text-align:left">Find your best and top quality electronic goods here</p>
+                            <p style="text-align:justify">Smartphone yang memiliki performa cukup baik ini mengusung
+                                sebuah teknologi layar PLS 5
+                                inch yang sangat recommended untuk nonton dan ngegame. Bicara soal spesifikasi,
+                                smartphone ini ditenagai oleh prosesor Quad-core 1.2 GHz Cortex-A53, memori RAM 2 GB,
+                                memori internal 16 GB, kamera depan 5 MP, kamera belakang 8 MP, serta mengusung
+                                penggunaan baterai berkapasitas 2600 mAh.</p>
+                        </div>
+                        <div class="col-2">
+                            <h3>HARGA</h3>
+                            <p>Rp 1.650.0000</p>
+                            <button class="btn btn-danger">YUK BELI</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-light">
+        <div class="container-lg py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center">
+                        <h2 class="fw-bold mb-5">PRODUCT LIST</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% if available %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in product_list %}
+                        <tr>
+                            <th scope="col">{{forloop.counter}}</th>
+                            <th scope="col">{{item.name}}</th>
+                            <th scope="col">{{item.description}}</th>
+                            <th scope="col">{{item.price}}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <div class="col text-center">
+                    <span>No Available Product</span>
+                </div>
+                {% endif %}
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center">
+                        <h2 class="fw-bold mb-5">SEARCH</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <form action="/coba/list" method="GET">
+                        <input type="text" name="product_name" placeholder="input your product name"
+                            class="form-control form-control-lg fs-6">
+                        <input class="btn btn-success mt-4" type="submit" value="seacrh">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
